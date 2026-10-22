@@ -1,8 +1,8 @@
 ---
 name: boost-context-bloat-optimizer
 description: "Enforces /boost context-window hygiene: <= 200 line root constitutions (CLAUDE.md/GEMINI.md), 3-tier lazy-loaded .mdc and SKILL.md sharding, subagent search offloading, 60% context compaction, and .boost-context-budget.json verification."
+version: 1.0.0
 ---
-
 # Module 01: Context-Bloat & Token-Pruner Protocol (`RULE-BOOST-CONTEXT-OPTIMIZER`)
 
 > **Severity**: `BLOCKING` | **Scope**: Root Constitutions (`CLAUDE.md`, `GEMINI.md`), Scoped Rules (`.cursor/rules/*.mdc`), Skills (`SKILL.md`), & Context Hygiene  
@@ -130,10 +130,12 @@ if (!fs.existsSync(BUDGET_FILE)) {
 }
 
 // Gate 2: Check root constitution files (CLAUDE.md, GEMINI.md, .cursorrules) for monolithic bloat
+let maxObservedRootLines = 0;
 for (const rootFile of ['CLAUDE.md', 'GEMINI.md', '.cursorrules']) {
   const fullPath = path.join(ROOT, rootFile);
   if (fs.existsSync(fullPath)) {
     const lines = fs.readFileSync(fullPath, 'utf8').split(/\r?\n/).length;
+    if (lines > maxObservedRootLines) maxObservedRootLines = lines;
     if (lines > ROOT_CONSTITUTION_MAX_LINES) {
       violations.push(
         `[BOOST-006] Root constitution ${rootFile} has ${lines} lines (hard cap is ${ROOT_CONSTITUTION_MAX_LINES} lines). ` +
@@ -160,12 +162,17 @@ if (fs.existsSync(cursorRulesDir)) {
   }
 }
 
-// Gate 4: Verify .cursorignore or .gitignore blocks heavy token-burning paths
+// Gate 4: Verify .cursorignore, .claudeignore, or .gitignore exists and blocks heavy token-burning paths
 const ignoreCandidates = ['.cursorignore', '.claudeignore', '.gitignore']
   .map((f) => path.join(ROOT, f))
   .filter((p) => fs.existsSync(p));
 
-if (ignoreCandidates.length > 0) {
+if (ignoreCandidates.length === 0) {
+  violations.push(
+    '[BOOST-009] Missing workspace ignore file (.cursorignore, .claudeignore, or .gitignore). ' +
+    'Create one excluding node_modules, dist, and package-lock.json.'
+  );
+} else {
   const combinedIgnore = ignoreCandidates.map((p) => fs.readFileSync(p, 'utf8')).join('\n');
   for (const pattern of REQUIRED_IGNORE_PATTERNS) {
     if (!combinedIgnore.includes(pattern)) {
