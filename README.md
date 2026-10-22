@@ -4,6 +4,7 @@
 > Built by **Longwave AI Lab** for **Claude Code (`CLAUDE.md` / `SKILL.md`)**, **Cursor IDE (`.cursor/rules/*.mdc`)**, **Google Antigravity (`GEMINI.md`)**, and **ChatGPT Projects**.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![SkillsDirectory Grade A (100/100)](https://www.skillsdirectory.com/api/skills/longwave-ai-lab-boost-context-bloat-optimizer/badge)](https://www.skillsdirectory.com/skills/longwave-ai-lab-boost-context-bloat-optimizer)
 [![Verification Gates: 114/114 PASS](https://img.shields.io/badge/Verification_Gates-114%2F114_PASS-success.svg)](docs/03-deterministic-goal-gates-and-anti-reward-hacking-hooks.md)
 [![Mutation Suite: 12/12 Caught](https://img.shields.io/badge/Adversarial_Mutations-12%2F12_Caught-critical.svg)](docs/03-deterministic-goal-gates-and-anti-reward-hacking-hooks.md)
 [![Platforms: Claude Code | Cursor | Antigravity](https://img.shields.io/badge/Platforms-Claude_Code_%7C_Cursor_%7C_Antigravity-purple.svg)](QUICKSTART-30S.md)
@@ -19,6 +20,7 @@ product_name: "Agentic Workflow OS - Deterministic Context-Pruning, Subagent San
 repository_slug: "longwave-ai-lab/agentic-workflow-os"
 brand: "Longwave AI Lab"
 version: "1.0.0"
+security_audit: "Grade A (100/100) on Skills Directory (https://www.skillsdirectory.com/skills/longwave-ai-lab-boost-context-bloat-optimizer)"
 license: "MIT (Starter Module 01) / Commercial Team License (Pro 4-Module Bundle)"
 target_environments:
   - "Claude Code (.claude/skills/*/SKILL.md, CLAUDE.md, .claude/settings.json)"
