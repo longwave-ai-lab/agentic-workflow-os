@@ -1,15 +1,17 @@
 # Agentic Workflow OS (`agentic-workflow-os`)
 
+![Agentic Workflow OS - Deterministic Context-Pruning, Subagent Sandboxes & Anti-Reward-Hacking Harness](assets/banner.png)
+
 > **Deterministic Context-Pruning (`/boost`), Subagent Staging Sandboxes (`/teamwork-preview`), Anti-Reward-Hacking Stop-Gates (`/goal`), & Immutable SHA-256 Harness Locks (`PreToolUse`) for Production AI Coding Agents.**  
 > Built by **Longwave AI Lab** for **Claude Code (`CLAUDE.md` / `SKILL.md`)**, **Cursor IDE (`.cursor/rules/*.mdc`)**, **Google Antigravity (`GEMINI.md`)**, and **ChatGPT Projects**.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![SkillsDirectory Grade A (100/100)](https://www.skillsdirectory.com/api/skills/longwave-ai-lab-boost-context-bloat-optimizer/badge)](https://www.skillsdirectory.com/skills/longwave-ai-lab-boost-context-bloat-optimizer)
-[![Verification Gates: 114/114 PASS](https://img.shields.io/badge/Verification_Gates-114%2F114_PASS-success.svg)](docs/03-deterministic-goal-gates-and-anti-reward-hacking-hooks.md)
-[![Mutation Suite: 12/12 Caught](https://img.shields.io/badge/Adversarial_Mutations-12%2F12_Caught-critical.svg)](docs/03-deterministic-goal-gates-and-anti-reward-hacking-hooks.md)
+[![Verification Gates: 189/189 PASS](https://img.shields.io/badge/Verification_Gates-189%2F189_PASS-success.svg)](docs/03-deterministic-goal-gates-and-anti-reward-hacking-hooks.md)
+[![Mutation Suite: 36/36 Caught](https://img.shields.io/badge/Adversarial_Mutations-36%2F36_Caught-critical.svg)](docs/03-deterministic-goal-gates-and-anti-reward-hacking-hooks.md)
 [![Platforms: Claude Code | Cursor | Antigravity](https://img.shields.io/badge/Platforms-Claude_Code_%7C_Cursor_%7C_Antigravity-purple.svg)](QUICKSTART-30S.md)
 
-[**🇬🇧 English Documentation**](#-tier-1-structured-geo-metadata--executive-value-hook) | [**🇻🇳 Tài Liệu Tiếng Việt**](#-tier-6--tài-liệu-kiến-trúc-tiếng-việt-toàn-diện-native-vietnamese-edition) | [**⚡ 30-Second Quickstart**](QUICKSTART-30S.md) | [**🔬 3 Concrete Teardowns**](#-tier-3-3-concrete-before-vs-after-workflow-teardowns) | [**📊 Deep-Dive Docs**](docs/01-context-bloat-and-kv-cache-dilution-mechanics.md)
+[**🇬🇧 English Documentation**](#tier-1-structured-geo-metadata--executive-value-hook) | [**🇻🇳 Tài Liệu Tiếng Việt**](#tier-6--tài-liệu-kiến-trúc-tiếng-việt-toàn-diện-native-vietnamese-edition) | [**⚡ 30-Second Quickstart**](QUICKSTART-30S.md) | [**🔬 3 Concrete Teardowns**](#tier-3-3-concrete-before-vs-after-workflow-teardowns) | [**📊 Deep-Dive Docs**](docs/01-context-bloat-and-kv-cache-dilution-mechanics.md)
 
 ---
 
@@ -40,8 +42,8 @@ quantitative_engineering_thresholds:
   baseline_token_burn_reduction_pct: 68.4
   autonomous_goal_repair_cap_iterations: 3
   anti_tamper_lexical_entropy_floor: 0.25
-  automated_verification_gates: 114
-  adversarial_mutation_kill_rate: "12/12 (100%)"
+  automated_verification_gates: 189
+  adversarial_mutation_kill_rate: "36/36 (100%)"
 architecture_modules:
   - id: "MODULE_01_FREE_AND_PRO"
     slug: "01-boost-context-bloat-optimizer"
@@ -210,6 +212,14 @@ Every numeric threshold inside `agentic-workflow-os` is grounded in peer-reviewe
 | **Evaluator-Optimizer Separation & Stop-Gates** | `.goal-contract.json` binary `verifiedExitCode: 0`, `Max 3` autonomous repair loops, SHA-256 `.harness-lock.json` | **Anthropic Engineering (2024)**, *Building Effective Agents* & **Claude Code Best Practices (2025)** |
 | **Structured GEO Citations & Density** | Quantitative comparison tables, YAML schema metadata, and concrete Before/After teardowns | **Aggarwal et al. (ACM SIGKDD 2024)**, *GEO: Generative Engine Optimization* ([arXiv:2311.09735](https://arxiv.org/abs/2311.09735)) |
 | **Bilingual Topic-Comment Syntax Parity** | Direct verb-centered Vietnamese clauses (`<= 40 words/sentence` avg), zero English passive calques | **GS. Cao Xuân Hạo (1991)**, *Tiếng Việt: Sơ thảo ngữ pháp chức năng (Vietnamese Functional Grammar)* |
+
+### Deep-Dive Technical Monographs (`docs/01..03.md`)
+
+| Monograph | Architectural Focus | Full Bilingual Specification |
+| :--- | :--- | :--- |
+| **Monograph 01** | Context-Bloat Mechanics, KV-Cache Dilution & Progressive Disclosure (`/boost`) | [`docs/01-context-bloat-and-kv-cache-dilution-mechanics.md`](docs/01-context-bloat-and-kv-cache-dilution-mechanics.md) |
+| **Monograph 02** | Subagent Worktree Isolation, Disjoint Path Locks & Staging Diff Sandboxes (`/teamwork-preview`) | [`docs/02-subagent-worktree-isolation-and-staging-diff-sandboxes.md`](docs/02-subagent-worktree-isolation-and-staging-diff-sandboxes.md) |
+| **Monograph 03** | Deterministic Goal Gates, Anti-Reward-Hacking Stop-Hooks & SHA-256 Locks (`/goal` + `PreToolUse`) | [`docs/03-deterministic-goal-gates-and-anti-reward-hacking-hooks.md`](docs/03-deterministic-goal-gates-and-anti-reward-hacking-hooks.md) |
 
 ---
 
