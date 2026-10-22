@@ -1,0 +1,252 @@
+---
+name: boost-context-bloat-optimizer
+description: "Enforces /boost context-window hygiene: <= 200 line root constitutions (CLAUDE.md/GEMINI.md), 3-tier lazy-loaded .mdc and SKILL.md sharding, subagent search offloading, 60% context compaction, and .boost-context-budget.json verification."
+---
+
+# Module 01: Context-Bloat & Token-Pruner Protocol (`RULE-BOOST-CONTEXT-OPTIMIZER`)
+
+> **Severity**: `BLOCKING` | **Scope**: Root Constitutions (`CLAUDE.md`, `GEMINI.md`), Scoped Rules (`.cursor/rules/*.mdc`), Skills (`SKILL.md`), & Context Hygiene  
+> **Platforms**: Google Antigravity (`GEMINI.md`), Cursor IDE (`.cursor/rules/*.mdc`), Claude Code (`CLAUDE.md` / `SKILL.md`), ChatGPT Projects
+
+---
+
+## 1. Core Constitutional Invariants (Nguyên Tắc Bất Biến)
+
+### 🇬🇧 English Specification
+1. **Zero Monolithic Prompt Stuffing (`200-Line Root Constitution Cap`)**:
+   - Whenever an agent initializes a workspace, audits token usage via `/boost`, or adds a new engineering rule, it is **STRICTLY FORBIDDEN** to dump encyclopedic documentation, raw API schemas, or edge-case tutorials into root instruction files (`CLAUDE.md`, `GEMINI.md`, `.cursorrules`).
+   - Root instruction files load on every single turn and consume primary attention heads. Keep every root constitution file strictly at or below **200 lines** (`<= 1,800 tokens`) so the model retains over **90% active reasoning capacity** for live code and user intent.
+   - When a root constitution file approaches 180 lines, extract domain-specific sections into dedicated `.cursor/rules/*.mdc` or `.claude/skills/*/SKILL.md` files before adding a single new line.
+2. **Step 1 - Progressive Disclosure & Lazy-Loaded Skill Sharding**:
+   - Partition workspace rules into a 3-tier attention hierarchy before writing new instructions:
+     - **Tier A - Root Constitution (`CLAUDE.md` / `GEMINI.md` <= 200 lines)**: Global architectural invariants, build/test commands, and high-level routing pointers only.
+     - **Tier B - Path-Scoped Cursor Rules (`.cursor/rules/*.mdc`)**: Domain rules restricted by explicit `globs` (for example `src/components/**/*.tsx` or `scripts/**/*.mjs`) with `alwaysApply: false` unless the rule governs universal safety.
+     - **Tier C - On-Demand Agent Skills (`.claude/skills/*/SKILL.md` & `.agents/skills/*/SKILL.md`)**: Deep workflows, reference tables, and verification scripts loaded lazily only when the active task matches the skill trigger description.
+3. **Step 2 - Subagent Search Offloading & Context Compaction**:
+   - Never run broad directory walks, unfiltered `grep` dumps, or multi-megabyte log reads inside the primary orchestrator thread.
+   - Offload exploratory file searches, dependency audits, and log triage to isolated subagents or targeted ripgrep queries capped at 50 matches. Return only a concise structured summary (`<= 300 tokens`) to the main thread.
+   - Trigger `/compact` or summarize completed sub-tasks whenever active context utilization crosses **60% of the model context window** to prevent middle-curve attention dilution.
+4. **Step 3 - Heavy Directory Exclusion & Verifiable Budget Receipt**:
+   - Configure `.cursorignore` and `.claudeignore` to block high-volume, low-signal directories (`node_modules/`, `dist/`, `build/`, `.next/`, `coverage/`, `package-lock.json`, `pnpm-lock.yaml`, `*.min.js`).
+   - Before concluding any `/boost` optimization pass, write a deterministic audit receipt to `.boost-context-budget.json` recording root file line counts, glob coverage across `.mdc` rules, excluded heavy directories, and estimated token savings.
+
+### 🇻🇳 Đặc Tả Tiếng Việt
+1. **Cấm Nhồi Nhét File Cấu Hình Gốc (`Trần 200 Dòng Cho File Gốc`)**:
+   - Khi AI khởi tạo dự án hoặc chạy lệnh `/boost` để dọn dẹp ngữ cảnh, **CẤM TUYỆT ĐỐI** nhồi tài liệu dài dòng vào file gốc. Bạn không được chép bảng dữ liệu thô hay hướng dẫn chi tiết vào `CLAUDE.md`, `GEMINI.md` hoặc `.cursorrules`.
+   - File cấu hình gốc luôn tự động nạp vào bộ nhớ ở mọi lượt hội thoại. Bạn phải giữ file gốc gọn dưới **200 dòng** (`<= 1.800 token`) để mô hình dành trọn **trên 90% năng lượng chú ý** cho mã nguồn thực tế.
+   - Khi file cấu hình gốc chạm mốc 180 dòng, bạn bắt buộc phải tách các hướng dẫn chuyên ngành sang thư mục `.cursor/rules/` hoặc `.claude/skills/` trước khi viết thêm luật mới.
+2. **Bước 1 - Phân Tầng Nạp Chậm Theo Ngữ Cảnh (`3-Tier Lazy Loading`)**:
+   - Chia nhỏ hệ thống quy tắc thành 3 tầng rõ rệt thay vì gom chung một chỗ:
+     - **Tầng A - Hiến Pháp Gốc (`CLAUDE.md` / `GEMINI.md` <= 200 dòng)**: Chỉ chứa nguyên tắc sống còn, lệnh chạy kiểm thử và danh mục điều hướng ngắn gọn.
+     - **Tầng B - Luật Theo Đường Dẫn File (`.cursor/rules/*.mdc`)**: Gắn bộ lọc đường dẫn `globs` cụ thể (như `src/ui/**/*.tsx`) để chỉ nạp luật khi chạm đúng thư mục đó.
+     - **Tầng C - Kỹ Năng Chuyên Biệt Nạp Khi Cần (`SKILL.md`)**: Tách các quy trình dài, bảng tham chiếu và công cụ kiểm tra vào thư mục kỹ năng riêng để AI chỉ mở ra đọc khi đúng việc.
+3. **Bước 2 - Cách Ly Tác Vụ Tìm Kiếm Nặng Sang Luồng Phụ (`Subagent Offloading`)**:
+   - Không chạy lệnh quét toàn bộ ổ đĩa hoặc đọc file nhật ký hàng chục nghìn dòng ngay trong luồng trò chuyện chính.
+   - Hãy giao việc dò tìm file hoặc lọc lỗi nhật ký cho một luồng tác vụ phụ độc lập. Luồng phụ chỉ trả về bản tóm tắt kết quả ngắn gọn dưới **300 token** cho luồng chính.
+   - Chủ động nén lịch sử trò chuyện ngay khi dung lượng bộ nhớ chạm ngưỡng **60% giới hạn cửa sổ ngữ cảnh** để tránh hiện tượng quên đầu quên đuôi.
+4. **Bước 3 - Chặn Thư Mục Rác & Xuất Biên Bản Kiểm Toán (`Context Budget Receipt`)**:
+   - Thiết lập file `.cursorignore` và `.claudeignore` để chặn triệt để các thư mục ngốn bộ nhớ như `node_modules/`, `dist/`, `.next/`, `coverage/` và `package-lock.json`.
+   - Sau mỗi lần tối ưu bằng `/boost`, hệ thống phải ghi kết quả đo đạc thực tế vào file `.boost-context-budget.json`. Biên bản này lưu rõ số dòng của file gốc, tỷ lệ gắn nhãn `globs` và danh sách thư mục nặng đã chặn.
+
+### Decision Matrix: Context Tier Routing (Ma Trận Phân Tầng Ngữ Cảnh)
+
+| Rule / Knowledge Type | Target Location | Loading Mode | Line / Token Ceiling | Why This Tier Prevents Decay |
+| :--- | :--- | :--- | :--- | :--- |
+| **Workspace Invariants & Build Commands** | `CLAUDE.md` / `GEMINI.md` | Always Loaded (Turn 0) | `<= 200 lines` (`<= 1,800 tokens`) | Keeps primary attention heads sharp across every turn without KV-cache bloat. |
+| **Component / Directory Conventions** | `.cursor/rules/*.mdc` | Path-Triggered (`globs`) | `<= 250 lines` per `.mdc` file | Loads UI rules only when editing UI files and DB rules only when editing schemas. |
+| **Multi-Step Playbooks & Scripts** | `.claude/skills/*/SKILL.md` | On-Demand Discovery | `<= 320 lines` + `scripts/` | Zero token cost on unrelated turns. Full depth when explicitly invoked. |
+| **External API Payloads & Schemas** | `docs/schemas/` or `references/` | Explicit File Read Only | Unlimited on disk (`0 idle tokens`) | Keeps giant JSON payloads out of active memory until a schema change occurs. |
+| **Heavy Build Artifacts & Lockfiles** | `.cursorignore` / `.claudeignore` | Hard Excluded (`0 tokens`) | `0 lines` indexed | Prevents `node_modules`, `dist`, `.next`, and `package-lock.json` from polluting search. |
+
+---
+
+## 2. 10-Pair Anti-Pattern vs. World-Class Execution Table (10 Cặp Đối Sánh)
+
+| # | Scenario | ❌ Bloated Context Slop (Rejected) | ✅ World-Class `/boost` Execution (Enforced) |
+| :--- | :--- | :--- | :--- |
+| **01** | **Root `CLAUDE.md` Size** | Dumping a 1,400-line monolith containing CSS tokens, database migrations, and old changelogs into `CLAUDE.md`. | Keeping `CLAUDE.md` under 150 lines with crisp build commands and clean pointers to scoped `.claude/skills/` modules. |
+| **02** | **Cursor Rule Activation** | Setting `alwaysApply: true` on 25 different `.mdc` files so every chat turn preloads 18,000 tokens of unrelated rules. | Reserving `alwaysApply: true` for at most 4 core safety invariants and binding domain rules to explicit `globs` patterns. |
+| **03** | **Codebase Exploration** | Running `cat` or `view_file` on 15 entire source files inside the main thread just to locate one function signature. | Running a targeted `grep_search` with file includes or delegating broad exploration to a subagent that returns a 10-line summary. |
+| **04** | **Lockfile & Bundle Indexing** | Allowing the agent to grep across `package-lock.json`, `pnpm-lock.yaml`, `dist/`, and `.next/` during symbol searches. | Enforcing `.cursorignore` and `.claudeignore` rules that strip lockfiles, build outputs, and coverage dumps from indexing. |
+| **05** | **Long Debugging Sessions** | Staying in a single 120-turn thread with 160,000 tokens of failed stack traces until the model forgets the original goal. | Compacting context at 60% window capacity into a clean 15-line state handoff block before starting the next implementation phase. |
+| **06** | **MCP Server Tool Schemas** | Enabling 18 unused MCP servers simultaneously, burning 24,000 tokens of tool JSON schemas before typing a single word. | Keeping only active workspace MCP tools enabled and offloading heavy external API schemas to lazy-loaded CLI scripts. |
+| **07** | **API Reference Storage** | Pasting 800 lines of Stripe or OpenAI webhook JSON payloads directly inside `.cursorrules` for future reference. | Storing webhook schemas inside `docs/schemas/` or `.agents/skills/payments/references/` and reading them only when touching payment files. |
+| **08** | **Test Suite Output Triage** | Piping 4,000 lines of verbose Jest or Playwright console logs directly into the main reasoning context. | Running tests with `--silent` or a summary reporter so only failing assertions and file line numbers enter the context window. |
+| **09** | **Vietnamese Rule Phrasing** | Writing 65-word rambling translationese paragraphs filled with passive filler phrases that waste 40% more BPE tokens. | Writing crisp 15 to 28 word Topic-Comment rules with direct action verbs that cut token footprint by 35% while boosting adherence. |
+| **10** | **Duplicate Cross-Tool Rules** | Manually editing separate, drifting copies of rules across `.cursorrules`, `CLAUDE.md`, and `GEMINI.md` until they contradict each other. | Maintaining a single source of truth in `rules/*.md` and compiling synchronized `.mdc`, `SKILL.md`, `CLAUDE.md`, and `GEMINI.md` targets. |
+
+---
+
+## 3. Ready-to-Run Node.js Linter (`exit code 1`)
+
+Save this script as `scripts/lint_boost_context_optimizer.mjs` and run `node scripts/lint_boost_context_optimizer.mjs` in your pre-commit hook or CI pipeline. It enforces root constitution line ceilings, checks `.cursorignore` coverage, verifies `.mdc` frontmatter hygiene, and validates `.boost-context-budget.json`.
+
+```javascript
+#!/usr/bin/env node
+/**
+ * MODULE 01 LINTER: Context-Bloat & Token-Pruner Auditor (RULE-BOOST-CONTEXT-OPTIMIZER)
+ * Enforces <= 200 line root constitutions, .cursorignore hygiene, and .boost-context-budget.json receipts.
+ * Exits with code 1 on any context-bloat violation.
+ */
+import fs from 'node:fs';
+import path from 'node:path';
+
+const ROOT = process.cwd();
+const BUDGET_FILE = path.join(ROOT, '.boost-context-budget.json');
+const ROOT_CONSTITUTION_MAX_LINES = 200;
+const RULE_FILE_MAX_LINES = 320;
+const REQUIRED_IGNORE_PATTERNS = ['node_modules', 'dist', 'package-lock.json'];
+
+let violations = [];
+
+// Gate 1: Verify .boost-context-budget.json exists and records audited metrics
+if (!fs.existsSync(BUDGET_FILE)) {
+  violations.push(
+    '[BOOST-001] Missing .boost-context-budget.json in workspace root. ' +
+    'Run the /boost context audit and record root constitution line counts and token budget metrics.'
+  );
+} else {
+  try {
+    const budget = JSON.parse(fs.readFileSync(BUDGET_FILE, 'utf8'));
+    if (typeof budget.rootConstitutionLines !== 'number' || budget.rootConstitutionLines > ROOT_CONSTITUTION_MAX_LINES) {
+      violations.push(
+        `[BOOST-002] .boost-context-budget.json reports rootConstitutionLines=${budget.rootConstitutionLines} ` +
+        `(exceeds hard cap of ${ROOT_CONSTITUTION_MAX_LINES} lines).`
+      );
+    }
+    if (!Array.isArray(budget.ignoredHeavyPaths) || budget.ignoredHeavyPaths.length < 3) {
+      violations.push(
+        '[BOOST-003] .boost-context-budget.json must list at least 3 ignoredHeavyPaths (e.g., node_modules, dist, package-lock.json).'
+      );
+    }
+    if (typeof budget.estimatedTokenSavingsPct !== 'number' || budget.estimatedTokenSavingsPct < 25) {
+      violations.push(
+        '[BOOST-004] .boost-context-budget.json must document estimatedTokenSavingsPct >= 25.'
+      );
+    }
+  } catch (err) {
+    violations.push(`[BOOST-005] Invalid JSON in .boost-context-budget.json: ${err.message}`);
+  }
+}
+
+// Gate 2: Check root constitution files (CLAUDE.md, GEMINI.md, .cursorrules) for monolithic bloat
+for (const rootFile of ['CLAUDE.md', 'GEMINI.md', '.cursorrules']) {
+  const fullPath = path.join(ROOT, rootFile);
+  if (fs.existsSync(fullPath)) {
+    const lines = fs.readFileSync(fullPath, 'utf8').split(/\r?\n/).length;
+    if (lines > ROOT_CONSTITUTION_MAX_LINES) {
+      violations.push(
+        `[BOOST-006] Root constitution ${rootFile} has ${lines} lines (hard cap is ${ROOT_CONSTITUTION_MAX_LINES} lines). ` +
+        `Shard detailed playbooks into .claude/skills/*/SKILL.md or .cursor/rules/*.mdc.`
+      );
+    }
+  }
+}
+
+// Gate 3: Check .cursor/rules/*.mdc line caps and frontmatter validity
+const cursorRulesDir = path.join(ROOT, '.cursor', 'rules');
+if (fs.existsSync(cursorRulesDir)) {
+  const mdcFiles = fs.readdirSync(cursorRulesDir).filter((f) => f.endsWith('.mdc'));
+  for (const file of mdcFiles) {
+    const fullPath = path.join(cursorRulesDir, file);
+    const content = fs.readFileSync(fullPath, 'utf8');
+    const lines = content.split(/\r?\n/).length;
+    if (lines > RULE_FILE_MAX_LINES) {
+      violations.push(`[BOOST-007] .cursor/rules/${file} has ${lines} lines (max ${RULE_FILE_MAX_LINES}).`);
+    }
+    if (!content.startsWith('---\n') && !content.startsWith('---\r\n')) {
+      violations.push(`[BOOST-008] .cursor/rules/${file} is missing YAML frontmatter (description, globs, alwaysApply).`);
+    }
+  }
+}
+
+// Gate 4: Verify .cursorignore or .gitignore blocks heavy token-burning paths
+const ignoreCandidates = ['.cursorignore', '.claudeignore', '.gitignore']
+  .map((f) => path.join(ROOT, f))
+  .filter((p) => fs.existsSync(p));
+
+if (ignoreCandidates.length > 0) {
+  const combinedIgnore = ignoreCandidates.map((p) => fs.readFileSync(p, 'utf8')).join('\n');
+  for (const pattern of REQUIRED_IGNORE_PATTERNS) {
+    if (!combinedIgnore.includes(pattern)) {
+      violations.push(`[BOOST-009] Workspace ignore files are missing heavy token-bloat path: "${pattern}".`);
+    }
+  }
+}
+
+if (violations.length > 0) {
+  console.error('❌ [RULE-BOOST-CONTEXT-OPTIMIZER FAILED] Context-bloat violations detected:');
+  for (const v of violations) console.error(`  - ${v}`);
+  process.exit(1);
+}
+
+console.log('✅ [RULE-BOOST-CONTEXT-OPTIMIZER PASSED] Context budget & lazy-loading invariants verified.');
+process.exit(0);
+```
+
+---
+
+## 4. Schema Example: `.boost-context-budget.json` & `.cursorignore`
+
+Create `.boost-context-budget.json` in your project root after running `/boost` to pass Gate 1 of the linter:
+
+```json
+{
+  "task": "Audit workspace context window hygiene and shard monolithic instructions",
+  "auditedAt": "2026-10-22",
+  "rootConstitutionLines": 96,
+  "activeAlwaysApplyRules": 4,
+  "lazyLoadedSkillsCount": 4,
+  "ignoredHeavyPaths": [
+    "node_modules",
+    "dist",
+    ".next",
+    "coverage",
+    "package-lock.json"
+  ],
+  "estimatedTokenSavingsPct": 68,
+  "compactionThresholdPct": 60
+}
+```
+
+Recommended `.cursorignore` / `.claudeignore` baseline template for every repository:
+
+```gitignore
+# Heavy dependencies and lockfiles
+node_modules/
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+
+# Build artifacts and caches
+dist/
+build/
+.next/
+.astro/
+coverage/
+*.min.js
+*.map
+```
+
+---
+
+## 5. Multi-Platform Installation Guide (Hướng Dẫn Cài Đặt Đa Nền Tảng)
+
+### 1. Google Antigravity (`GEMINI.md` & `.agents/skills/`)
+- Copy the core rule block into `~/.gemini/GEMINI.md` (Global) or `<workspace>/.agents/skills/boost-context-bloat-optimizer/SKILL.md`.
+- Antigravity will automatically keep root instructions compact, enforce `.cursorignore` exclusions, and offload broad searches to subagents.
+- **Tiếng Việt**: Chép khối quy tắc vào `~/.gemini/GEMINI.md` hoặc thư mục `.agents/skills/boost-context-bloat-optimizer/SKILL.md`. Hệ thống sẽ tự động giữ file gốc tinh gọn và đẩy các lệnh dò tìm nặng sang luồng phụ.
+
+### 2. Cursor IDE (`.cursor/rules/01-boost-context-bloat-optimizer.mdc`)
+- Copy `.cursor/rules/01-boost-context-bloat-optimizer.mdc` into your project's `.cursor/rules/` folder.
+- Keep `CLAUDE.md` and `.cursorrules` under 200 lines and bind domain rules to specific `globs`.
+- **Tiếng Việt**: Thả file `.cursor/rules/01-boost-context-bloat-optimizer.mdc` vào thư mục `.cursor/rules/` của dự án. Giữ file gốc dưới 200 dòng và gắn đường dẫn `globs` cho từng nhóm luật.
+
+### 3. Claude Code (`CLAUDE.md` & `.claude/skills/`)
+- Place `SKILL.md` inside `.claude/skills/boost-context-bloat-optimizer/SKILL.md` and keep root `CLAUDE.md` concise.
+- Run `/compact` whenever active context exceeds 60% capacity so reasoning stays sharp.
+- **Tiếng Việt**: Đặt file `SKILL.md` vào `.claude/skills/boost-context-bloat-optimizer/SKILL.md` và chủ động chạy lệnh `/compact` khi bộ nhớ hội thoại vượt ngưỡng 60%.
+
+### 4. ChatGPT (Custom Instructions / Projects)
+- Upload `01-boost-context-bloat-optimizer.md` into your **ChatGPT Project Files** so the assistant structures project instructions into modular files instead of one giant prompt.
+- **Tiếng Việt**: Tải file `01-boost-context-bloat-optimizer.md` lên mục tài liệu dự án trên ChatGPT để AI chia nhỏ hướng dẫn thành từng mô-đun rõ ràng.
