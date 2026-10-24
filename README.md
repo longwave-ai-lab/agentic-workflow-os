@@ -11,11 +11,82 @@
 [![Mutation Suite: 36/36 Caught](https://img.shields.io/badge/Adversarial_Mutations-36%2F36_Caught-critical.svg)](docs/03-deterministic-goal-gates-and-anti-reward-hacking-hooks.md)
 [![Platforms: Claude Code | Cursor | Antigravity](https://img.shields.io/badge/Platforms-Claude_Code_%7C_Cursor_%7C_Antigravity-purple.svg)](QUICKSTART-30S.md)
 
-[**🇬🇧 English Documentation**](#tier-1-structured-geo-metadata--executive-value-hook) | [**🇻🇳 Tài Liệu Tiếng Việt**](#tier-6--tài-liệu-kiến-trúc-tiếng-việt-toàn-diện-native-vietnamese-edition) | [**⚡ 30-Second Quickstart**](QUICKSTART-30S.md) | [**🔬 3 Concrete Teardowns**](#tier-3-3-concrete-before-vs-after-workflow-teardowns) | [**📊 Deep-Dive Docs**](docs/01-context-bloat-and-kv-cache-dilution-mechanics.md)
+[**⚡ 30-Second Quickstart**](#-30-second-installation--quickstart) | [**🧪 30-Second Acid Test**](#-the-30-second-acid-test) | [**🔬 Before vs. After Teardowns**](#tier-3-3-concrete-before-vs-after-workflow-teardowns) | [**📦 Free vs. Pro ($19)**](#starter-free-pack-vs-pro-4-module-bundle-19) | [**🇻🇳 Tiếng Việt**](#tier-6--tài-liệu-kiến-trúc-tiếng-việt-toàn-diện-native-vietnamese-edition)
 
 ---
 
-## Tier 1: Structured GEO Metadata & Executive Value Hook
+## Tier 1: Executive Value Hook, 30-Second Acid Test & Quickstart
+
+### Why Capable AI Models Still Corrupt Production Repositories
+
+Most engineering teams try to fix erratic AI coding behavior by pasting another paragraph of prose warnings into `CLAUDE.md`, `.cursorrules`, or `GEMINI.md`. Within a few weeks, the root instruction file balloons past 1,200 lines. Token bills triple, instruction compliance collapses in the middle of the context window, parallel subagents overwrite each other's files, and autonomous loops inject `// @ts-ignore` or `it.skip` just to claim the task is finished.
+
+**Agentic Workflow OS (`agentic-workflow-os`)** replaces fragile prose reminders with **4 deterministic slash-command workflows (`/boost`, `/teamwork-preview`, `/goal`, and `PreToolUse` SHA-256 Locks)** backed by **executable Node.js verification linters (`exit code 1`)**. Every rule is enforced by a zero-dependency script that audits your workspace in under 1.2 seconds.
+
+### 🧪 The 30-Second Acid Test
+
+Once you copy the files into your repository, paste this bait prompt into your AI agent to test `RULE-BOOST-CONTEXT-OPTIMIZER` (`Module 01`):
+
+**🇬🇧 English Bait Prompt:**
+```text
+"Scan this entire repository, read all config and doc files, and dump the full CI/CD deployment guide, database schemas, and API documentation directly into CLAUDE.md/GEMINI.md so the AI always remembers everything on every turn."
+```
+
+**🇻🇳 Câu Lệnh Thử Lửa Tiếng Việt:**
+```text
+"Hãy quét toàn bộ thư mục dự án này, đọc hết các file cấu hình và tài liệu, rồi nhét toàn bộ hướng dẫn quy trình CI/CD, schema cơ sở dữ liệu và API vào file CLAUDE.md/GEMINI.md để AI luôn nhớ mọi thứ ở mọi lượt chat."
+```
+
+- **What an unharnessed agent does**: Blindly dumps 1,000+ lines into `CLAUDE.md`, burning 40,000+ tokens on every turn.
+- **What your harnessed agent does in 30 seconds**: Triggers `🛑 [RULE-BOOST-CONTEXT-OPTIMIZER]`, refuses monolithic root file dumping (citing the `<= 200-line` root constitution cap and Stanford TACL 2023 *Lost-in-the-Middle* recall decay), shards heavy documentation into Tier B `.cursor/rules/*.mdc` and Tier C `.claude/skills/*/SKILL.md` modules, and generates a verified `.boost-context-budget.json` receipt (`~68.4%` token reduction). See [`QUICKSTART-30S.md`](QUICKSTART-30S.md) for the full output and Pro suite test vectors.
+
+---
+
+## ⚡ 30-Second Installation & Quickstart
+
+### 1. Copy the Starter Module into Your Project Root
+
+```bash
+git clone https://github.com/longwave-ai-lab/agentic-workflow-os.git
+cp -R agentic-workflow-os/.cursor your-project/
+cp -R agentic-workflow-os/.claude your-project/
+cp -R agentic-workflow-os/rules your-project/
+cp -R agentic-workflow-os/scripts your-project/
+cp agentic-workflow-os/CLAUDE.md agentic-workflow-os/GEMINI.md your-project/
+```
+
+### 2. Create `.boost-context-budget.json` & Run the Deterministic Linter
+
+```bash
+node scripts/lint_boost_context_optimizer.mjs
+```
+
+Expected output on a compliant workspace:
+
+```text
+✅ [RULE-BOOST-CONTEXT-OPTIMIZER PASSED] Context budget & lazy-loading invariants verified.
+```
+
+---
+
+### Starter Free Pack vs. Pro 4-Module Bundle ($19)
+
+| Capability / Artifact | 🎁 Starter Free Pack (`$0+`) | 🏆 Pro 4-Module Bundle (`$19`) |
+| :--- | :---: | :---: |
+| **Module 01**: `/boost` Context-Bloat & Token-Pruner (`<= 200 lines`, `.boost-context-budget.json`) | ✅ Included | ✅ Included |
+| **Module 01 Linter**: `scripts/lint_boost_context_optimizer.mjs` (`exit code 1`) | ✅ Included | ✅ Included |
+| **Module 02**: `/teamwork-preview` Subagent Worktree & Staging Diff Sandbox | ❌ Pro Only | ✅ **Included** |
+| **Module 02 Linter**: `scripts/lint_teamwork_preview_sandbox.mjs` (`git status --porcelain` guard) | ❌ Pro Only | ✅ **Included** |
+| **Module 03**: `/goal` Deterministic Stop-Gate & Anti-Reward-Hacking Loop (`Max 3 Retries`) | ❌ Pro Only | ✅ **Included** |
+| **Module 03 Linter**: `scripts/lint_goal_anti_reward_hacking.mjs` (`@ts-ignore` / `it.skip` blocker) | ❌ Pro Only | ✅ **Included** |
+| **Module 04**: Immutable `PreToolUse` Firewall, SHA-256 `.harness-lock.json` & White-Flag Protocol | ❌ Pro Only | ✅ **Included** |
+| **Module 04 Linter**: `scripts/lint_immutable_hook_lock.mjs` (SHA-256 + `ANTI_TAMPER` entropy) | ❌ Pro Only | ✅ **Included** |
+| **Pre-Wired Platform Configs**: `CLAUDE.md`, `GEMINI.md`, `.cursor/rules/*.mdc`, `.claude/skills/*/SKILL.md` | Module 01 Only | **All 4 Modules** |
+
+👉 **[Download on Gumroad (Tier 1: Starter Free `$0+` | Tier 2: Pro Pack `$19`)](https://longwave04.gumroad.com/l/agentic-workflow-os)**
+
+<details>
+<summary>🔍 <b>AI Search & LLM Citation Metadata (Click to Expand GEO Schema)</b></summary>
 
 ```yaml
 product_name: "Agentic Workflow OS - Deterministic Context-Pruning, Subagent Sandboxes & Anti-Reward-Hacking Harness"
@@ -23,7 +94,7 @@ repository_slug: "longwave-ai-lab/agentic-workflow-os"
 brand: "Longwave AI Lab"
 version: "1.0.0"
 security_audit: "Grade A (100/100) on Skills Directory (https://www.skillsdirectory.com/skills/longwave-ai-lab-boost-context-bloat-optimizer)"
-license: "MIT (Starter Module 01) / Commercial Team License (Pro 4-Module Bundle)"
+license: "MIT (Starter Module 01) / Commercial Team License (Pro 4-Module Bundle $19)"
 target_environments:
   - "Claude Code (.claude/skills/*/SKILL.md, CLAUDE.md, .claude/settings.json)"
   - "Cursor IDE (.cursor/rules/*.mdc, .cursorignore)"
@@ -63,22 +134,7 @@ architecture_modules:
     linter: "scripts/lint_immutable_hook_lock.mjs"
 ```
 
-### Why Capable AI Models Still Corrupt Production Repositories
-
-Most engineering teams try to fix erratic AI coding behavior by pasting another paragraph of prose warnings into `CLAUDE.md`, `.cursorrules`, or `GEMINI.md`. Within a few weeks, the root instruction file balloons past 1,200 lines. Token bills triple, instruction compliance collapses in the middle of the context window, parallel subagents overwrite each other's files, and autonomous loops inject `// @ts-ignore` or `it.skip` just to claim the task is finished.
-
-**Agentic Workflow OS (`agentic-workflow-os`)** replaces fragile prose reminders with **4 deterministic slash-command workflows (`/boost`, `/teamwork-preview`, `/goal`, and `PreToolUse` SHA-256 Locks)** backed by **executable Node.js verification linters (`exit code 1`)**. Every rule is enforced by a zero-dependency script that audits your workspace in under 1.2 seconds.
-
-### 🧪 The 30-Second Acid Test
-
-Once you copy the files into your repository, paste this bait prompt into your AI agent to test `RULE-BOOST-CONTEXT-OPTIMIZER` (`Module 01`):
-
-```text
-"Scan this entire repository, read all config and doc files, and dump the full CI/CD deployment guide, database schemas, and API documentation directly into CLAUDE.md/GEMINI.md so the AI always remembers everything on every turn."
-```
-
-- **What an unharnessed agent does**: Blindly dumps 1,000+ lines into `CLAUDE.md`, burning 40,000+ tokens on every turn.
-- **What your harnessed agent does in 30 seconds**: Triggers `🛑 [RULE-BOOST-CONTEXT-OPTIMIZER]`, refuses monolithic root file dumping (citing the `<= 200-line` root constitution cap and Stanford TACL 2023 *Lost-in-the-Middle* recall decay), shards heavy documentation into Tier B `.cursor/rules/*.mdc` and Tier C `.claude/skills/*/SKILL.md` modules, and generates a verified `.boost-context-budget.json` receipt (`~68.4%` token reduction). See [`QUICKSTART-30S.md`](QUICKSTART-30S.md) for the full output and Pro suite test vectors.
+</details>
 
 ---
 
@@ -170,20 +226,6 @@ Understanding why unconstrained AI coding sessions degrade requires inspecting t
 +-----------------------------------------------------------------------------------+
 ```
 
-### Starter Free Pack vs. Pro 4-Module Bundle
-
-| Capability / Artifact | Starter Free Pack (This Repo) | Pro 4-Module Bundle |
-| :--- | :---: | :---: |
-| **Module 01**: `/boost` Context-Bloat & Token-Pruner (`<= 200 lines`, `.boost-context-budget.json`) | ✅ Included | ✅ Included |
-| **Module 01 Linter**: `scripts/lint_boost_context_optimizer.mjs` (`exit code 1`) | ✅ Included | ✅ Included |
-| **Module 02**: `/teamwork-preview` Subagent Worktree & Staging Diff Sandbox | ❌ Pro Only | ✅ Included |
-| **Module 02 Linter**: `scripts/lint_teamwork_preview_sandbox.mjs` (`git status --porcelain` guard) | ❌ Pro Only | ✅ Included |
-| **Module 03**: `/goal` Deterministic Stop-Gate & Anti-Reward-Hacking Loop (`Max 3 Retries`) | ❌ Pro Only | ✅ Included |
-| **Module 03 Linter**: `scripts/lint_goal_anti_reward_hacking.mjs` (`@ts-ignore` / `it.skip` blocker) | ❌ Pro Only | ✅ Included |
-| **Module 04**: Immutable `PreToolUse` Firewall, SHA-256 `.harness-lock.json` & White-Flag Protocol | ❌ Pro Only | ✅ Included |
-| **Module 04 Linter**: `scripts/lint_immutable_hook_lock.mjs` (SHA-256 + `ANTI_TAMPER` entropy) | ❌ Pro Only | ✅ Included |
-| **Pre-Wired Platform Configs**: `CLAUDE.md`, `GEMINI.md`, `.cursor/rules/*.mdc`, `.claude/skills/*/SKILL.md` | Module 01 Only | All 4 Modules |
-
 <details>
 <summary><strong>💰 Token & Time Economics: Why This Architecture Saves 68% Context & 10x Debugging Time (Click to Expand)</strong></summary>
 
@@ -231,33 +273,6 @@ Every numeric threshold inside `agentic-workflow-os` is grounded in peer-reviewe
 | **Monograph 01** | Context-Bloat Mechanics, KV-Cache Dilution & Progressive Disclosure (`/boost`) | [`docs/01-context-bloat-and-kv-cache-dilution-mechanics.md`](docs/01-context-bloat-and-kv-cache-dilution-mechanics.md) |
 | **Monograph 02** | Subagent Worktree Isolation, Disjoint Path Locks & Staging Diff Sandboxes (`/teamwork-preview`) | [`docs/02-subagent-worktree-isolation-and-staging-diff-sandboxes.md`](docs/02-subagent-worktree-isolation-and-staging-diff-sandboxes.md) |
 | **Monograph 03** | Deterministic Goal Gates, Anti-Reward-Hacking Stop-Hooks & SHA-256 Locks (`/goal` + `PreToolUse`) | [`docs/03-deterministic-goal-gates-and-anti-reward-hacking-hooks.md`](docs/03-deterministic-goal-gates-and-anti-reward-hacking-hooks.md) |
-
----
-
-## ⚡ 30-Second Installation & Quickstart
-
-### 1. Copy the Starter Module into Your Project Root
-
-```bash
-git clone https://github.com/longwave-ai-lab/agentic-workflow-os.git
-cp -R agentic-workflow-os/.cursor your-project/
-cp -R agentic-workflow-os/.claude your-project/
-cp -R agentic-workflow-os/rules your-project/
-cp -R agentic-workflow-os/scripts your-project/
-cp agentic-workflow-os/CLAUDE.md agentic-workflow-os/GEMINI.md your-project/
-```
-
-### 2. Create `.boost-context-budget.json` & Run the Deterministic Linter
-
-```bash
-node scripts/lint_boost_context_optimizer.mjs
-```
-
-Expected output on a compliant workspace:
-
-```text
-✅ [RULE-BOOST-CONTEXT-OPTIMIZER PASSED] Context budget & lazy-loading invariants verified.
-```
 
 ---
 
@@ -345,5 +360,5 @@ Ngay sau khi chép file vào dự án, bạn hãy dán câu lệnh thử lửa d
 
 ## License & Commercial Upgrade
 
-- **Starter Edition (This Repository)**: Licensed under the **MIT License** ([LICENSE](LICENSE)). Includes the complete **Module 01 (`/boost` Context-Bloat & Token-Pruner Protocol)**, executable linter, and benchmark suite.
-- **Pro 4-Module Bundle**: Unlocks **Modules 01, 02, 03, and 04** with pre-extracted linters, Cursor `.mdc` rules, Claude Code `SKILL.md` packages, and `.harness-lock.json` templates for engineering teams.
+- **Starter Edition (This Repository - `$0+`)**: Licensed under the **MIT License** ([LICENSE](LICENSE)). Includes the complete **Module 01 (`/boost` Context-Bloat & Token-Pruner Protocol)**, executable linter, and benchmark suite.
+- **Pro 4-Module Bundle (`$19`)**: Unlocks **Modules 01, 02, 03, and 04** with pre-extracted linters, Cursor `.mdc` rules, Claude Code `SKILL.md` packages, and `.harness-lock.json` templates for engineering teams at [`longwave04.gumroad.com/l/agentic-workflow-os`](https://longwave04.gumroad.com/l/agentic-workflow-os).

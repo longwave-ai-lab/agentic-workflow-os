@@ -69,3 +69,12 @@ Copy and paste the prompt below right after installing to test **Module 01 (`01-
 2. **3-Tier Sharded Routing**: Keeps Tier A root constitution `<= 200 lines`, routes path-scoped rules to Tier B (`.cursor/rules/*.mdc`), and moves heavy manuals to Tier C lazy-loaded skills (`.claude/skills/`).
 3. **Verifiable Budget Receipt**: Emits a valid `.boost-context-budget.json` receipt detailing exact token savings (`~68.4%`).
 
+---
+
+## ⭐ Enjoying the Starter Pack?
+- If this workflow improved your AI agent's speed and token efficiency, please leave a **★★★★★ (5-Star) rating** on [Gumroad](https://longwave04.gumroad.com/l/agentic-workflow-os) or star the GitHub repository!
+- Ready for the full 4-module operating system? Upgrade to the **[Pro Pack ($19)](https://longwave04.gumroad.com/l/agentic-workflow-os)** to unlock:
+  - **Module 02 (`02-teamwork-preview-staging-sandbox`)**: `/teamwork-preview` Subagent Worktree & Staging Diff Sandbox + executable linter (`lint_teamwork_preview_sandbox.mjs`).
+  - **Module 03 (`03-goal-anti-reward-hacking-gate`)**: `/goal` Deterministic Stop-Gate & Anti-Reward-Hacking Loop banning `@ts-ignore` and `it.skip` (`lint_goal_anti_reward_hacking.mjs`).
+  - **Module 04 (`04-immutable-hook-and-anti-tamper-lock`)**: Immutable `PreToolUse` Firewall, SHA-256 `.harness-lock.json`, and `[WHITE-FLAG ESCALATION]` protocol (`lint_immutable_hook_lock.mjs`).
+
