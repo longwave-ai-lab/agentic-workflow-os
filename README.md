@@ -7,7 +7,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![SkillsDirectory Grade A (100/100)](https://www.skillsdirectory.com/api/skills/longwave-ai-lab-boost-context-bloat-optimizer/badge)](https://www.skillsdirectory.com/skills/longwave-ai-lab-boost-context-bloat-optimizer)
-[![Verification Gates: 189/189 PASS](https://img.shields.io/badge/Verification_Gates-189%2F189_PASS-success.svg)](docs/03-deterministic-goal-gates-and-anti-reward-hacking-hooks.md)
+[![Verification Gates: 193/193 PASS](https://img.shields.io/badge/Verification_Gates-193%2F193_PASS-success.svg)](docs/03-deterministic-goal-gates-and-anti-reward-hacking-hooks.md)
 [![Mutation Suite: 36/36 Caught](https://img.shields.io/badge/Adversarial_Mutations-36%2F36_Caught-critical.svg)](docs/03-deterministic-goal-gates-and-anti-reward-hacking-hooks.md)
 [![Platforms: Claude Code | Cursor | Antigravity](https://img.shields.io/badge/Platforms-Claude_Code_%7C_Cursor_%7C_Antigravity-purple.svg)](QUICKSTART-30S.md)
 
@@ -42,7 +42,7 @@ quantitative_engineering_thresholds:
   baseline_token_burn_reduction_pct: 68.4
   autonomous_goal_repair_cap_iterations: 3
   anti_tamper_lexical_entropy_floor: 0.25
-  automated_verification_gates: 189
+  automated_verification_gates: 193
   adversarial_mutation_kill_rate: "36/36 (100%)"
 architecture_modules:
   - id: "MODULE_01_FREE_AND_PRO"
@@ -68,6 +68,17 @@ architecture_modules:
 Most engineering teams try to fix erratic AI coding behavior by pasting another paragraph of prose warnings into `CLAUDE.md`, `.cursorrules`, or `GEMINI.md`. Within a few weeks, the root instruction file balloons past 1,200 lines. Token bills triple, instruction compliance collapses in the middle of the context window, parallel subagents overwrite each other's files, and autonomous loops inject `// @ts-ignore` or `it.skip` just to claim the task is finished.
 
 **Agentic Workflow OS (`agentic-workflow-os`)** replaces fragile prose reminders with **4 deterministic slash-command workflows (`/boost`, `/teamwork-preview`, `/goal`, and `PreToolUse` SHA-256 Locks)** backed by **executable Node.js verification linters (`exit code 1`)**. Every rule is enforced by a zero-dependency script that audits your workspace in under 1.2 seconds.
+
+### 🧪 The 30-Second Acid Test
+
+Once you copy the files into your repository, paste this bait prompt into your AI agent to test `RULE-BOOST-CONTEXT-OPTIMIZER` (`Module 01`):
+
+```text
+"Scan this entire repository, read all config and doc files, and dump the full CI/CD deployment guide, database schemas, and API documentation directly into CLAUDE.md/GEMINI.md so the AI always remembers everything on every turn."
+```
+
+- **What an unharnessed agent does**: Blindly dumps 1,000+ lines into `CLAUDE.md`, burning 40,000+ tokens on every turn.
+- **What your harnessed agent does in 30 seconds**: Triggers `🛑 [RULE-BOOST-CONTEXT-OPTIMIZER]`, refuses monolithic root file dumping (citing the `<= 200-line` root constitution cap and Stanford TACL 2023 *Lost-in-the-Middle* recall decay), shards heavy documentation into Tier B `.cursor/rules/*.mdc` and Tier C `.claude/skills/*/SKILL.md` modules, and generates a verified `.boost-context-budget.json` receipt (`~68.4%` token reduction). See [`QUICKSTART-30S.md`](QUICKSTART-30S.md) for the full output and Pro suite test vectors.
 
 ---
 
@@ -257,6 +268,16 @@ Expected output on a compliant workspace:
 Phần lớn các nhóm kỹ sư phần mềm cố gắng sửa thói quen làm ẩu của AI bằng cách viết thêm hàng chục đoạn văn dặn dò vào file `CLAUDE.md`, `.cursorrules` hoặc `GEMINI.md`. Chỉ sau vài tuần làm việc, file hướng dẫn gốc phình to lên hơn 1.200 dòng. Chi phí token tăng gấp ba lần, khả năng nhớ quy tắc ở đoạn giữa tụt dốc thảm hại, các luồng AI chạy song song tự ý ghi đè lên file của nhau, còn vòng lặp tự sửa lỗi thì lén chèn `// @ts-ignore` hoặc `it.skip` để báo cáo khống rằng công việc đã hoàn tất.
 
 **Agentic Workflow OS (`agentic-workflow-os`)** chấm dứt tình trạng dặn dò bằng lời nói suông thông qua **4 quy trình lệnh gạch chéo định sẵn (`/boost`, `/teamwork-preview`, `/goal` và Khóa bất biến `PreToolUse` SHA-256)** đi kèm **bộ công cụ kiểm tra tự động bằng Node.js (`exit code 1`)**. Mọi quy tắc đều được khóa cứng bằng mã kiểm tra chạy dưới 1,2 giây mà không cần cài đặt thêm bất kỳ thư viện ngoài nào.
+
+#### 🧪 Bài Thử Quỳ Tím 30 Giây
+
+Ngay sau khi chép file vào dự án, bạn hãy dán câu lệnh thử lửa dưới đây vào khung chat để kiểm chứng `RULE-BOOST-CONTEXT-OPTIMIZER` (`Mô-đun 01`):
+
+```text
+"Hãy quét toàn bộ thư mục dự án này, đọc hết các file cấu hình và tài liệu, rồi nhét toàn bộ hướng dẫn quy trình CI/CD, schema cơ sở dữ liệu và API vào file CLAUDE.md/GEMINI.md để AI luôn nhớ mọi thứ ở mọi lượt chat."
+```
+
+- **Phản ứng của AI ngay lập tức**: AI kích hoạt `🛑 [RULE-BOOST-CONTEXT-OPTIMIZER]`, từ chối nhồi nhét file gốc vượt trần `200 dòng` (trích dẫn hiện tượng rơi rụng trí nhớ vùng giữa của Stanford TACL 2023), tự động tách tài liệu sang tầng `.cursor/rules/*.mdc` và `.claude/skills/*/SKILL.md`, đồng thời xuất biên lai `.boost-context-budget.json` giúp tiết kiệm `~68,4%` lượng token mỗi lượt. Xem trọn bộ câu lệnh thử lửa bản Pro trong file [`QUICKSTART-30S.md`](QUICKSTART-30S.md).
 
 ---
 

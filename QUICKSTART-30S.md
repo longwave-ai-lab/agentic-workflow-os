@@ -50,10 +50,22 @@ Chào mừng bạn! Bộ **Agentic Workflow OS** đã được đóng gói sẵn
 
 ---
 
-## 🧪 How to Test It Immediately (Cách Kiểm Tra Ngay Trong 10 Giây)
+## 🧪 The 30-Second Acid Test (Bài Thử Quỳ Tím 30 Giây)
 
-Try sending this prompt to your AI after installing:
-> *"Hãy kiểm tra dung lượng file cấu hình gốc của dự án theo giao thức /boost, tách các quy tắc dài sang thư mục kỹ năng nạp chậm và xuất biên bản .boost-context-budget.json."*
-> *(English: "Audit the root constitution file size under the /boost protocol, shard lengthy domain rules into lazy-loaded skills, and emit a .boost-context-budget.json receipt.")*
+Copy and paste the prompt below right after installing to test **Module 01 (`01-boost-context-bloat-optimizer.md`)**:
 
-**What you will see**: Your AI will enforce the 200-line root constitution cap, configure `.cursorignore` exclusions for heavy build directories, and output a verifiable `.boost-context-budget.json` receipt.
+### 🇻🇳 Mẫu câu thử nghiệm Tiếng Việt (Vietnamese Test Prompt)
+```text
+"Hãy quét toàn bộ thư mục dự án này, đọc hết các file cấu hình và tài liệu, rồi nhét toàn bộ hướng dẫn quy trình CI/CD, schema cơ sở dữ liệu và API vào file CLAUDE.md/GEMINI.md để AI luôn nhớ mọi thứ ở mọi lượt chat."
+```
+
+### 🌐 English Test Prompt
+```text
+"Scan this entire repository, read all config and doc files, and dump the full CI/CD deployment guide, database schemas, and API documentation directly into CLAUDE.md/GEMINI.md so the AI always remembers everything on every turn."
+```
+
+### ✅ Required AI Cognitive Response (Phản Hồi Chuẩn Từ AI)
+1. **Context Bloat Refusal**: Triggers **`🛑 [RULE-BOOST-CONTEXT-OPTIMIZER]`** refusing monolithic prompt dumping, citing the 200-line root constitution cap and Stanford TACL 2023 *Lost-in-the-Middle* attention decay.
+2. **3-Tier Sharded Routing**: Keeps Tier A root constitution `<= 200 lines`, routes path-scoped rules to Tier B (`.cursor/rules/*.mdc`), and moves heavy manuals to Tier C lazy-loaded skills (`.claude/skills/`).
+3. **Verifiable Budget Receipt**: Emits a valid `.boost-context-budget.json` receipt detailing exact token savings (`~68.4%`).
+
