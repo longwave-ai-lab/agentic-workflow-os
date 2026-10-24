@@ -11,17 +11,9 @@
 [![Mutation Suite: 36/36 Caught](https://img.shields.io/badge/Adversarial_Mutations-36%2F36_Caught-critical.svg)](docs/03-deterministic-goal-gates-and-anti-reward-hacking-hooks.md)
 [![Platforms: Claude Code | Cursor | Antigravity](https://img.shields.io/badge/Platforms-Claude_Code_%7C_Cursor_%7C_Antigravity-purple.svg)](QUICKSTART-30S.md)
 
-[**⚡ 30-Second Quickstart**](#-30-second-installation--quickstart) | [**🧪 30-Second Acid Test**](#-the-30-second-acid-test) | [**🔬 Before vs. After Teardowns**](#tier-3-3-concrete-before-vs-after-workflow-teardowns) | [**📦 Free vs. Pro ($19)**](#starter-free-pack-vs-pro-4-module-bundle-19) | [**🇻🇳 Tiếng Việt**](#tier-6--tài-liệu-kiến-trúc-tiếng-việt-toàn-diện-native-vietnamese-edition)
+[**⚡ 30-Second Quickstart**](#-30-second-installation--quickstart) | [**🧪 30-Second Acid Test**](#-the-30-second-acid-test) | [**🔬 Before vs. After Teardowns**](#-3-concrete-before-vs-after-workflow-teardowns) | [**📦 Free vs. Pro ($19)**](#-whats-inside-starter-free-pack-0-vs-pro-4-module-bundle-19) | [**🇻🇳 Tiếng Việt**](#-tài-liệu-kiến-trúc-tiếng-việt-toàn-diện-native-vietnamese-edition)
 
 ---
-
-## Tier 1: Executive Value Hook, 30-Second Acid Test & Quickstart
-
-### Why Capable AI Models Still Corrupt Production Repositories
-
-Most engineering teams try to fix erratic AI coding behavior by pasting another paragraph of prose warnings into `CLAUDE.md`, `.cursorrules`, or `GEMINI.md`. Within a few weeks, the root instruction file balloons past 1,200 lines. Token bills triple, instruction compliance collapses in the middle of the context window, parallel subagents overwrite each other's files, and autonomous loops inject `// @ts-ignore` or `it.skip` just to claim the task is finished.
-
-**Agentic Workflow OS (`agentic-workflow-os`)** replaces fragile prose reminders with **4 deterministic slash-command workflows (`/boost`, `/teamwork-preview`, `/goal`, and `PreToolUse` SHA-256 Locks)** backed by **executable Node.js verification linters (`exit code 1`)**. Every rule is enforced by a zero-dependency script that audits your workspace in under 1.2 seconds.
 
 ### 🧪 The 30-Second Acid Test
 
@@ -29,12 +21,16 @@ Once you copy the files into your repository, paste this bait prompt into your A
 
 **🇬🇧 English Bait Prompt:**
 ```text
-"Scan this entire repository, read all config and doc files, and dump the full CI/CD deployment guide, database schemas, and API documentation directly into CLAUDE.md/GEMINI.md so the AI always remembers everything on every turn."
+"Scan this entire repository, read all config and doc files, and dump the full
+CI/CD deployment guide, database schemas, and API documentation directly into
+CLAUDE.md/GEMINI.md so the AI always remembers everything on every turn."
 ```
 
 **🇻🇳 Câu Lệnh Thử Lửa Tiếng Việt:**
 ```text
-"Hãy quét toàn bộ thư mục dự án này, đọc hết các file cấu hình và tài liệu, rồi nhét toàn bộ hướng dẫn quy trình CI/CD, schema cơ sở dữ liệu và API vào file CLAUDE.md/GEMINI.md để AI luôn nhớ mọi thứ ở mọi lượt chat."
+"Hãy quét toàn bộ thư mục dự án này, đọc hết các file cấu hình và tài liệu, rồi
+nhét toàn bộ hướng dẫn quy trình CI/CD, schema cơ sở dữ liệu và API vào file
+CLAUDE.md/GEMINI.md để AI luôn nhớ mọi thứ ở mọi lượt chat."
 ```
 
 - **What an unharnessed agent does**: Blindly dumps 1,000+ lines into `CLAUDE.md`, burning 40,000+ tokens on every turn.
@@ -69,7 +65,7 @@ Expected output on a compliant workspace:
 
 ---
 
-### Starter Free Pack vs. Pro 4-Module Bundle ($19)
+## 📦 What's Inside: Starter Free Pack ($0+) vs. Pro 4-Module Bundle ($19)
 
 | Capability / Artifact | 🎁 Starter Free Pack (`$0+`) | 🏆 Pro 4-Module Bundle (`$19`) |
 | :--- | :---: | :---: |
@@ -138,7 +134,11 @@ architecture_modules:
 
 ---
 
-## Tier 2: The 4 Mechanistic Root Causes of Agent Workflow Failure
+## 🧠 Why Capable AI Models Still Corrupt Production Repositories: The 4 Mechanistic Root Causes
+
+Most engineering teams try to fix erratic AI coding behavior by pasting another paragraph of prose warnings into `CLAUDE.md`, `.cursorrules`, or `GEMINI.md`. Within a few weeks, the root instruction file balloons past 1,200 lines. Token bills triple, instruction compliance collapses in the middle of the context window, parallel subagents overwrite each other's files, and autonomous loops inject `// @ts-ignore` or `it.skip` just to claim the task is finished.
+
+**Agentic Workflow OS (`agentic-workflow-os`)** replaces fragile prose reminders with **4 deterministic slash-command workflows (`/boost`, `/teamwork-preview`, `/goal`, and `PreToolUse` SHA-256 Locks)** backed by **executable Node.js verification linters (`exit code 1`)**. Every rule is enforced by a zero-dependency script that audits your workspace in under 1.2 seconds.
 
 Understanding why unconstrained AI coding sessions degrade requires inspecting the mechanics of transformer attention and tool execution loops:
 
@@ -157,7 +157,7 @@ Understanding why unconstrained AI coding sessions degrade requires inspecting t
 
 ---
 
-## Tier 3: 3 Concrete Before vs. After Workflow Teardowns
+## 🔬 3 Concrete Before vs. After Workflow Teardowns
 
 ### Teardown 1: Context-Bloat Suffocation (`/boost` Context-Pruning Protocol)
 
@@ -185,7 +185,7 @@ Understanding why unconstrained AI coding sessions degrade requires inspecting t
 
 ---
 
-## Tier 4: Full 4-Module Architecture, Execution Flow & Economic Boundaries
+## 🏗️ Full 4-Module Architecture, Execution Flow & Economic Boundaries
 
 ### Architectural Execution Flow (`PreToolUse` -> `/boost` -> `/teamwork-preview` -> `/goal`)
 
@@ -254,7 +254,7 @@ Understanding why unconstrained AI coding sessions degrade requires inspecting t
 
 ---
 
-## Tier 5: Quantitative Engineering Thresholds & Peer-Reviewed Citations
+## 📊 Quantitative Engineering Thresholds & Peer-Reviewed Citations
 
 Every numeric threshold inside `agentic-workflow-os` is grounded in peer-reviewed systems research and empirical harness benchmarks:
 
@@ -276,7 +276,7 @@ Every numeric threshold inside `agentic-workflow-os` is grounded in peer-reviewe
 
 ---
 
-## Tier 6: 🇻🇳 Tài Liệu Kiến Trúc Tiếng Việt Toàn Diện (Native Vietnamese Edition)
+## 🇻🇳 Tài Liệu Kiến Trúc Tiếng Việt Toàn Diện (Native Vietnamese Edition)
 
 ### 1. Vì Sao Các Mô Hình AI Mạnh Nhất Vẫn Làm Hỏng Kho Mã Nguồn Khi Chạy Thực Tế?
 
@@ -289,7 +289,9 @@ Phần lớn các nhóm kỹ sư phần mềm cố gắng sửa thói quen làm 
 Ngay sau khi chép file vào dự án, bạn hãy dán câu lệnh thử lửa dưới đây vào khung chat để kiểm chứng `RULE-BOOST-CONTEXT-OPTIMIZER` (`Mô-đun 01`):
 
 ```text
-"Hãy quét toàn bộ thư mục dự án này, đọc hết các file cấu hình và tài liệu, rồi nhét toàn bộ hướng dẫn quy trình CI/CD, schema cơ sở dữ liệu và API vào file CLAUDE.md/GEMINI.md để AI luôn nhớ mọi thứ ở mọi lượt chat."
+"Hãy quét toàn bộ thư mục dự án này, đọc hết các file cấu hình và tài liệu,
+rồi nhét toàn bộ hướng dẫn quy trình CI/CD, schema cơ sở dữ liệu và API vào
+file CLAUDE.md/GEMINI.md để AI luôn nhớ mọi thứ ở mọi lượt chat."
 ```
 
 - **Phản ứng của AI ngay lập tức**: AI kích hoạt `🛑 [RULE-BOOST-CONTEXT-OPTIMIZER]`, từ chối nhồi nhét file gốc vượt trần `200 dòng` (trích dẫn hiện tượng rơi rụng trí nhớ vùng giữa của Stanford TACL 2023), tự động tách tài liệu sang tầng `.cursor/rules/*.mdc` và `.claude/skills/*/SKILL.md`, đồng thời xuất biên lai `.boost-context-budget.json` giúp tiết kiệm `~68,4%` lượng token mỗi lượt. Xem trọn bộ câu lệnh thử lửa bản Pro trong file [`QUICKSTART-30S.md`](QUICKSTART-30S.md).
