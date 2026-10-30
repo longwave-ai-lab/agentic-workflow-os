@@ -77,6 +77,7 @@ Expected output on a compliant workspace:
 | **Module 03 Linter**: `scripts/lint_goal_anti_reward_hacking.mjs` (`@ts-ignore` / `it.skip` blocker) | ❌ Pro Only | ✅ **Included** |
 | **Module 04**: Immutable `PreToolUse` Firewall, SHA-256 `.harness-lock.json` & White-Flag Protocol | ❌ Pro Only | ✅ **Included** |
 | **Module 04 Linter**: `scripts/lint_immutable_hook_lock.mjs` (SHA-256 + `ANTI_TAMPER` entropy) | ❌ Pro Only | ✅ **Included** |
+| **Monograph 04 & Cluster Linter**: 60-Second Repo Autopsy, 6 White-Hat Golden Repo Clusters (`docs/04`) & `scripts/lint_repo_cluster_compatibility.mjs` | Blueprint Doc Included | ✅ **Blueprint + Executable Linter** |
 | **Pre-Wired Platform Configs**: `CLAUDE.md`, `GEMINI.md`, `.cursor/rules/*.mdc`, `.claude/skills/*/SKILL.md` | Module 01 Only | **All 4 Modules** |
 
 👉 **[Download on Gumroad (Tier 1: Starter Free `$0+` | Tier 2: Pro Pack `$19`)](https://longwave04.gumroad.com/l/agentic-workflow-os)**
@@ -266,13 +267,14 @@ Every numeric threshold inside `agentic-workflow-os` is grounded in peer-reviewe
 | **Structured GEO Citations & Density** | Quantitative comparison tables, YAML schema metadata, and concrete Before/After teardowns | **Aggarwal et al. (ACM SIGKDD 2024)**, *GEO: Generative Engine Optimization* ([arXiv:2311.09735](https://arxiv.org/abs/2311.09735)) |
 | **Bilingual Topic-Comment Syntax Parity** | Direct verb-centered Vietnamese clauses (`<= 40 words/sentence` avg), zero English passive calques | **GS. Cao Xuân Hạo (1991)**, *Tiếng Việt: Sơ thảo ngữ pháp chức năng (Vietnamese Functional Grammar)* |
 
-### Deep-Dive Technical Monographs (`docs/01..03.md`)
+### Deep-Dive Technical Monographs (`docs/01..04.md`)
 
 | Monograph | Architectural Focus | Full Bilingual Specification |
 | :--- | :--- | :--- |
 | **Monograph 01** | Context-Bloat Mechanics, KV-Cache Dilution & Progressive Disclosure (`/boost`) | [`docs/01-context-bloat-and-kv-cache-dilution-mechanics.md`](docs/01-context-bloat-and-kv-cache-dilution-mechanics.md) |
 | **Monograph 02** | Subagent Worktree Isolation, Disjoint Path Locks & Staging Diff Sandboxes (`/teamwork-preview`) | [`docs/02-subagent-worktree-isolation-and-staging-diff-sandboxes.md`](docs/02-subagent-worktree-isolation-and-staging-diff-sandboxes.md) |
 | **Monograph 03** | Deterministic Goal Gates, Anti-Reward-Hacking Stop-Hooks & SHA-256 Locks (`/goal` + `PreToolUse`) | [`docs/03-deterministic-goal-gates-and-anti-reward-hacking-hooks.md`](docs/03-deterministic-goal-gates-and-anti-reward-hacking-hooks.md) |
+| **Monograph 04** | 60-Second Open-Source Repo Autopsy & 6 White-Hat Golden Repo Clusters (`lint_repo_cluster_compatibility.mjs`) | [`docs/04-golden-repo-clusters-blueprint.md`](docs/04-golden-repo-clusters-blueprint.md) |
 
 ---
 
