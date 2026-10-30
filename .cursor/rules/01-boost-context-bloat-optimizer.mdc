@@ -16,7 +16,7 @@ alwaysApply: true
 1. **Zero Monolithic Prompt Stuffing (`200-Line Root Constitution Cap`)**:
    - Whenever an agent initializes a workspace, audits token usage via `/boost`, or adds a new engineering rule, it is **STRICTLY FORBIDDEN** to dump encyclopedic documentation, raw API schemas, or edge-case tutorials into root instruction files (`CLAUDE.md`, `GEMINI.md`, `.cursorrules`).
    - Root instruction files load on every single turn and consume primary attention heads. Keep every root constitution file strictly at or below **200 lines** (`<= 1,800 tokens`) so the model retains over **90% active reasoning capacity** for live code and user intent.
-   - When a root constitution file approaches 180 lines, extract domain-specific sections into dedicated `.cursor/rules/*.mdc` or `.claude/skills/*/SKILL.md` files before adding a single new line.
+   - When a root constitution file approaches 180 lines, extract domain-specific sections into dedicated `.cursor/rules/*.mdc` or `.claude/skills/*/SKILL.md` files before adding a single new line (`One-In, Consolidation-Out`). Before adding any new rule or script, evaluate **Option 0 (Keep Current State)** across 5 Lean-Harness questions to confirm that existing gates do not already catch the bug.
 2. **Step 1 - Progressive Disclosure & Lazy-Loaded Skill Sharding**:
    - Partition workspace rules into a 3-tier attention hierarchy before writing new instructions:
      - **Tier A - Root Constitution (`CLAUDE.md` / `GEMINI.md` <= 200 lines)**: Global architectural invariants, build/test commands, and high-level routing pointers only.
@@ -34,7 +34,7 @@ alwaysApply: true
 1. **Cấm Nhồi Nhét File Cấu Hình Gốc (`Trần 200 Dòng Cho File Gốc`)**:
    - Khi AI khởi tạo dự án hoặc chạy lệnh `/boost` để dọn dẹp ngữ cảnh, **CẤM TUYỆT ĐỐI** nhồi tài liệu dài dòng vào file gốc. Bạn không được chép bảng dữ liệu thô hay hướng dẫn chi tiết vào `CLAUDE.md`, `GEMINI.md` hoặc `.cursorrules`.
    - File cấu hình gốc luôn tự động nạp vào bộ nhớ ở mọi lượt hội thoại. Bạn phải giữ file gốc gọn dưới **200 dòng** (`<= 1.800 token`) để mô hình dành trọn **trên 90% năng lượng chú ý** cho mã nguồn thực tế.
-   - Khi file cấu hình gốc chạm mốc 180 dòng, bạn bắt buộc phải tách các hướng dẫn chuyên ngành sang thư mục `.cursor/rules/` hoặc `.claude/skills/` trước khi viết thêm luật mới.
+   - Khi file cấu hình gốc chạm mốc 180 dòng, bạn bắt buộc phải tách các hướng dẫn chuyên ngành sang thư mục `.cursor/rules/` hoặc `.claude/skills/` trước khi viết thêm luật mới (`One-In, Consolidation-Out`). Trước khi thêm bất kỳ quy tắc hay công cụ nào, luôn đối chiếu **Phương án 0 (Giữ nguyên hiện trạng)** để tránh làm phình bộ khung kiểm soát.
 2. **Bước 1 - Phân Tầng Nạp Chậm Theo Ngữ Cảnh (`3-Tier Lazy Loading`)**:
    - Chia nhỏ hệ thống quy tắc thành 3 tầng rõ rệt thay vì gom chung một chỗ:
      - **Tầng A - Hiến Pháp Gốc (`CLAUDE.md` / `GEMINI.md` <= 200 dòng)**: Chỉ chứa nguyên tắc sống còn, lệnh chạy kiểm thử và danh mục điều hướng ngắn gọn.

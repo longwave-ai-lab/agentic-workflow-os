@@ -1,4 +1,4 @@
-# GEMINI.md - Agentic Workflow OS (Free Starter Pack (Module 01 - MIT))
+# CLAUDE.md - Agentic Workflow OS (Free Starter Pack (Module 01 - MIT))
 
 > **Drop-In Constitutional Rules for Google Antigravity, Cursor IDE, Claude Code & ChatGPT**
 > **Engineered by Longwave AI Lab (`longwave-ai-lab`)** | **Root Constitution (`<= 200 Lines` Compliant)**
@@ -15,7 +15,7 @@ To prevent context-window bloat and Lost-in-the-Middle attention decay, this roo
 
 ## Core Execution Invariants (Always Active)
 
-1. **`/boost` Context Hygiene (Module 01)**: Keep `CLAUDE.md` and `GEMINI.md` at or below 200 lines (`<= 1,800 tokens`). Shard domain rules into path-scoped `.mdc` globs and on-demand `SKILL.md` files. Exclude `node_modules`, `dist`, `.next`, and lockfiles via `.cursorignore`. Offload noisy searches to subagents and compact context at 60% capacity.
+1. **`/boost` Context Hygiene (Module 01)**: Keep `CLAUDE.md` and `GEMINI.md` at or below 200 lines (`<= 1,800 tokens`) via `One-In, Consolidation-Out` and Option 0 premise audits. Shard domain rules into path-scoped `.mdc` globs and on-demand `SKILL.md` files. Exclude `node_modules`, `dist`, `.next`, and lockfiles via `.cursorignore`. Offload noisy searches to subagents and compact context at 60% capacity.
 
 ## Verification Commands
 
