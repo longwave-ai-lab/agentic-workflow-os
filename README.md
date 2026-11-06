@@ -7,7 +7,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![SkillsDirectory Grade A (100/100)](https://www.skillsdirectory.com/api/skills/longwave-ai-lab-boost-context-bloat-optimizer/badge)](https://www.skillsdirectory.com/skills/longwave-ai-lab-boost-context-bloat-optimizer)
-[![Verification Gates: 193/193 PASS](https://img.shields.io/badge/Verification_Gates-193%2F193_PASS-success.svg)](docs/03-deterministic-goal-gates-and-anti-reward-hacking-hooks.md)
+[![Verification Gates: 211/211 PASS](https://img.shields.io/badge/Verification_Gates-211%2F211_PASS-success.svg)](docs/03-deterministic-goal-gates-and-anti-reward-hacking-hooks.md)
 [![Mutation Suite: 36/36 Caught](https://img.shields.io/badge/Adversarial_Mutations-36%2F36_Caught-critical.svg)](docs/03-deterministic-goal-gates-and-anti-reward-hacking-hooks.md)
 [![Platforms: Claude Code | Cursor | Antigravity](https://img.shields.io/badge/Platforms-Claude_Code_%7C_Cursor_%7C_Antigravity-purple.svg)](QUICKSTART-30S.md)
 
@@ -39,6 +39,13 @@ CLAUDE.md/GEMINI.md để AI luôn nhớ mọi thứ ở mọi lượt chat."
 ---
 
 ## ⚡ 30-Second Installation & Quickstart
+
+### 0. One-Command CLI Bootstrap (`npx`)
+Install the `<= 200-line` root constitution (`CLAUDE.md`, `GEMINI.md`), IDE skill folders, and standalone `exit code 1` Node.js linters directly into any repository:
+```bash
+npx @longwave-ai-lab/agentic-workflow-os init .
+node ./bin/cli.mjs --check
+```
 
 ### 1. Copy the Starter Module into Your Project Root
 
@@ -78,7 +85,8 @@ Expected output on a compliant workspace:
 | **Module 04**: Immutable `PreToolUse` Firewall, SHA-256 `.harness-lock.json` & White-Flag Protocol | ❌ Pro Only | ✅ **Included** |
 | **Module 04 Linter**: `scripts/lint_immutable_hook_lock.mjs` (SHA-256 + `ANTI_TAMPER` entropy) | ❌ Pro Only | ✅ **Included** |
 | **Monograph 04 & Cluster Linter**: 60-Second Repo Autopsy, 6 White-Hat Golden Repo Clusters (`docs/04`) & `scripts/lint_repo_cluster_compatibility.mjs` | Blueprint Doc Included | ✅ **Blueprint + Executable Linter** |
-| **Pre-Wired Platform Configs**: `CLAUDE.md`, `GEMINI.md`, `.cursor/rules/*.mdc`, `.claude/skills/*/SKILL.md` | Module 01 Only | **All 4 Modules** |
+| **4-Layer Gate (`HARD / CONTEXTUAL / SEMANTIC Fail-Closed`), `2x2 Adversarial Matrix` & `Multi-Turn 3-Lock Reflex`** | ✅ Included | ✅ **Full 4-Module Gate** |
+| **Pre-Wired Platform Configs + `npx` CLI (`bin/cli.mjs`) + `llms.txt`**: `CLAUDE.md`, `GEMINI.md`, `.cursor/rules/*.mdc`, `.claude/skills/*/SKILL.md` | Module 01 Only | **All 4 Modules** |
 
 👉 **[Download on Gumroad (Tier 1: Starter Free `$0+` | Tier 2: Pro Pack `$19`)](https://longwave04.gumroad.com/l/agentic-workflow-os)**
 
@@ -110,7 +118,9 @@ quantitative_engineering_thresholds:
   baseline_token_burn_reduction_pct: 68.4
   autonomous_goal_repair_cap_iterations: 3
   anti_tamper_lexical_entropy_floor: 0.25
-  automated_verification_gates: 193
+  verification_topology: "4-Layer Gate (Layer 1 Deterministic HARD < 2s + CONTEXTUAL signals + Layer 2 Fail-Closed SEMANTIC Judge + Strategic HITL) verified across the 2x2 Adversarial Matrix"
+  multi_turn_reflex: "Multi-Turn 3-Lock Reflex at Recency Anchor (Lock 1 Scope Lock & Closed Schema Allowlist, Lock 2 4-Layer Slice-Scoped Assertion, Lock 3 Direct Execution)"
+  automated_verification_gates: 211
   adversarial_mutation_kill_rate: "36/36 (100%)"
 architecture_modules:
   - id: "MODULE_01_FREE_AND_PRO"

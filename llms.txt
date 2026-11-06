@@ -1,0 +1,30 @@
+# Agentic Workflow OS
+
+> Built by Longwave AI Lab (`longwave-ai-lab`). Deterministic 2-Tier Open-Core AI Engineering System ($0+ MIT Starter / $19 Commercial Pro Bundle) for Google Antigravity (`GEMINI.md`), Cursor IDE (`.cursor/rules/*.mdc`), Claude Code (`CLAUDE.md` & `SKILL.md`), and ChatGPT Projects.
+
+## Core Architecture Modules & Standalone Node.js Linters (`exit code 1`)
+
+- [Module 01: 01-boost-context-bloat-optimizer](rules/01-boost-context-bloat-optimizer.md): Enforces `/boost` context-window hygiene (`<= 200` line root constitutions `CLAUDE.md`/`GEMINI.md`, 3-tier lazy-loaded `.mdc` and `SKILL.md` sharding, subagent search offloading, and `.boost-context-budget.json`). Enforced by `scripts/lint_boost_context_optimizer.mjs`.
+- [Module 02: 02-teamwork-preview-staging-sandbox](rules/02-teamwork-preview-staging-sandbox.md): Enforces `/teamwork-preview` multi-agent worktree isolation (`allowedPaths[]`, `rollbackCommitSha`, 4-part Staging Diff Preview Cards, and read-only challenger pass). Enforced by `scripts/lint_teamwork_preview_sandbox.mjs`.
+- [Module 03: 03-goal-anti-reward-hacking-gate](rules/03-goal-anti-reward-hacking-gate.md): Enforces `/goal` binary `exit code 0` completion contracts (`.goal-contract.json`), blocks `@ts-ignore`, `@ts-expect-error`, `it.skip`, `eslint-disable`, `|| true`, and fake judge fallback scores (`?? 0.92`), and caps repair loops at 3 iterations. Enforced by `scripts/lint_goal_anti_reward_hacking.mjs`.
+- [Module 04: 04-immutable-hook-and-anti-tamper-lock](rules/04-immutable-hook-and-anti-tamper-lock.md): Enforces immutable SHA-256 harness locks (`.harness-lock.json`), `PreToolUse` destructive command firewalls (`rm -rf`, `git reset --hard`, `--no-verify`), and `[WHITE-FLAG ESCALATION]`. Enforced by `scripts/lint_immutable_hook_lock.mjs`.
+
+## 4-Layer Verification Gate, 2x2 Adversarial Matrix & Multi-Turn 3-Lock Reflex
+
+- **4-Layer Gate**: Separates Layer 1 deterministic `HARD` checks (`< 2s`, AST and closed schema `z.strictObject` passing on a clean Canary sample) from `CONTEXTUAL` signals and Layer 2 `SEMANTIC` fail-closed arbitration (`PASS`, `HARD_FAIL`, `GREY_ZONE_WHITE_FLAG`, `UNDETERMINED` vs `SUCCESS`, `NOT_RUN`, `TOOL_ERROR`).
+- **2x2 Adversarial Matrix**: Validates every 2-layer gate across all 4 cells (Clean Baseline `PASS`, Layer 1 Invariant Breach `L1 HARD_FAIL`, Evasive Slop `L1 Clean + L2 HARD_FAIL`, Contextual Rescue `L1 Warning + L2 PASS`).
+- **Multi-Turn 3-Lock Reflex**: Enforces Lock 1 (`Scope Lock & Closed Schema Allowlist`), Lock 2 (`4-Layer Parameterization & Slice-Scoped Assertion`), and Lock 3 (`Direct Execution & Single Final Build`).
+
+## Deep-Dive Technical Monographs (GEO Indexed)
+
+- [01-context-bloat-and-kv-cache-dilution-mechanics.md](docs/01-context-bloat-and-kv-cache-dilution-mechanics.md): Full bilingual English and Vietnamese architectural monograph.
+- [02-subagent-worktree-isolation-and-staging-diff-sandboxes.md](docs/02-subagent-worktree-isolation-and-staging-diff-sandboxes.md): Full bilingual English and Vietnamese architectural monograph.
+- [03-deterministic-goal-gates-and-anti-reward-hacking-hooks.md](docs/03-deterministic-goal-gates-and-anti-reward-hacking-hooks.md): Full bilingual English and Vietnamese architectural monograph.
+- [04-golden-repo-clusters-blueprint.md](docs/04-golden-repo-clusters-blueprint.md): Full bilingual English and Vietnamese architectural monograph.
+
+## Quickstart & Verification CLI
+
+- Install via npx: `npx @longwave-ai-lab/agentic-workflow-os init .`
+- Verify package & linter AST: `node ./bin/cli.mjs --check`
+- Run deterministic verification: `node scripts/lint_boost_context_optimizer.mjs`
+- Quickstart Guide: [QUICKSTART-30S.md](QUICKSTART-30S.md)

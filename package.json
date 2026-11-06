@@ -1,0 +1,28 @@
+{
+  "name": "@longwave-ai-lab/agentic-workflow-os",
+  "version": "1.0.0",
+  "description": "Deterministic Context-Pruning (/boost), Subagent Staging Sandboxes (/teamwork-preview), Anti-Reward-Hacking Stop-Gates (/goal), & Immutable SHA-256 Harness Locks for Production AI Coding Agents",
+  "type": "module",
+  "bin": {
+    "agentic-workflow-os": "./bin/cli.mjs"
+  },
+  "scripts": {
+    "lint": "node scripts/lint_boost_context_optimizer.mjs",
+    "test": "node ./bin/cli.mjs --check"
+  },
+  "keywords": [
+    "cursor-rules",
+    "claude-code",
+    "agent-skills",
+    "google-antigravity",
+    "deterministic-harness",
+    "longwave-ai-lab",
+    "agentic-workflow-os"
+  ],
+  "author": "Longwave AI Lab <307369959+longwave-ai-lab@users.noreply.github.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/longwave-ai-lab/agentic-workflow-os.git"
+  }
+}
