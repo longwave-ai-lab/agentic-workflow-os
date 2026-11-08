@@ -90,6 +90,8 @@ Expected output on a compliant workspace:
 
 👉 **[Download on Gumroad (Tier 1: Starter Free `$0+` | Tier 2: Pro Pack `$19`)](https://longwave04.gumroad.com/l/agentic-workflow-os)**
 
+🎓 **[Udemy Practice Exams (60 Production AI Debugging Scenarios)](https://www.udemy.com/course/ai-agent-vibe-coding-debugging-practice-tests-2026/?referralCode=E113BBA17D7355F8CA76)** · **[Claim `$12.99` Launch Coupon (`LONGWAVE_PRO_2026`)](https://www.udemy.com/course/ai-agent-vibe-coding-debugging-practice-tests-2026/?couponCode=LONGWAVE_PRO_2026)**
+
 <details>
 <summary>🔍 <b>AI Search & LLM Citation Metadata (Click to Expand GEO Schema)</b></summary>
 
