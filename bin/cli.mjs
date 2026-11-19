@@ -26,9 +26,9 @@ if (cmd === '--help' || cmd === '-h') {
   console.log(' Built by Longwave AI Lab');
   console.log('====================================================================');
   console.log('Usage:');
-  console.log('  npx @longwave-ai-lab/agentic-workflow-os init [target-dir]   Copy rules, skills, and linters into project');
-  console.log('  npx @longwave-ai-lab/agentic-workflow-os --check             Verify packaged rules and linter syntax');
-  console.log('  npx @longwave-ai-lab/agentic-workflow-os --version           Print package version');
+  console.log('  npx --yes github:longwave-ai-lab/agentic-workflow-os init .              Copy rules, skills, and linters into target dir (default: .)');
+  console.log('  npx --yes github:longwave-ai-lab/agentic-workflow-os --check             Verify packaged rules and linter syntax');
+  console.log('  npx --yes github:longwave-ai-lab/agentic-workflow-os --version           Print package version');
   process.exit(0);
 }
 

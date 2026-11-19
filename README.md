@@ -43,8 +43,8 @@ CLAUDE.md/GEMINI.md để AI luôn nhớ mọi thứ ở mọi lượt chat."
 ### 0. One-Command CLI Bootstrap (`npx`)
 Install the `<= 200-line` root constitution (`CLAUDE.md`, `GEMINI.md`), IDE skill folders, and standalone `exit code 1` Node.js linters directly into any repository:
 ```bash
-npx @longwave-ai-lab/agentic-workflow-os init .
-node ./bin/cli.mjs --check
+npx --yes github:longwave-ai-lab/agentic-workflow-os init .
+npx --yes github:longwave-ai-lab/agentic-workflow-os --check
 ```
 
 ### 1. Copy the Starter Module into Your Project Root

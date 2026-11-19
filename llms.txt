@@ -24,7 +24,8 @@
 
 ## Quickstart & Verification CLI
 
-- Install via npx: `npx @longwave-ai-lab/agentic-workflow-os init .`
-- Verify package & linter AST: `node ./bin/cli.mjs --check`
+- Install via npx: `npx --yes github:longwave-ai-lab/agentic-workflow-os init .`
+- Verify CLI via npx: `npx --yes github:longwave-ai-lab/agentic-workflow-os --check`
+- Verify package & linter AST locally: `node ./bin/cli.mjs --check`
 - Run deterministic verification: `node scripts/lint_boost_context_optimizer.mjs`
 - Quickstart Guide: [QUICKSTART-30S.md](QUICKSTART-30S.md)
